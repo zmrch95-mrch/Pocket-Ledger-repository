@@ -136,18 +136,6 @@ class _Sidebar extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 10),
-            child: Text(
-              context.tr('WORKSPACE'),
-              style: TextStyle(
-                color: Color(0xFF8A9694),
-                fontSize: 10,
-                letterSpacing: 1.4,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
           for (var index = 0; index < _items.length; index++)
             _SidebarItem(
               icon: _items[index].icon,

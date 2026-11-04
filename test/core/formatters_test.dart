@@ -62,15 +62,9 @@ void main() {
         123450,
         'EGP',
         locale: 'ar',
-        currencyDisplayName:
-            '\u0627\u0644\u062c\u0646\u064a\u0647 \u0627\u0644\u0645\u0635\u0631\u064a (EGP)',
+        currencyDisplayName: 'جنيه مصري',
       );
-      expect(
-        formatted,
-        endsWith(
-          ' \u0627\u0644\u062c\u0646\u064a\u0647 \u0627\u0644\u0645\u0635\u0631\u064a (EGP)',
-        ),
-      );
+      expect(formatted, endsWith(' جنيه مصري'));
     });
   });
 

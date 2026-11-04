@@ -185,7 +185,7 @@ class _ReportsPageState extends State<ReportsPage> {
                                         locale: context.localeCode,
                                         currencyDisplayName:
                                             context.localeCode == 'ar'
-                                            ? context.trCurrencyCode(code)
+                                            ? context.trCurrencyName(code)
                                             : null,
                                       ),
                                       style: Theme.of(context)
@@ -286,7 +286,7 @@ class _CategoryBreakdownRow extends StatelessWidget {
                   total.currencyCode,
                   locale: context.localeCode,
                   currencyDisplayName: context.localeCode == 'ar'
-                      ? context.trCurrencyCode(total.currencyCode)
+                      ? context.trCurrencyName(total.currencyCode)
                       : null,
                 ),
                 style: const TextStyle(fontWeight: FontWeight.w700),

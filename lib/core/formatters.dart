@@ -28,7 +28,7 @@ String formatCurrency(
   final amount = amountCents / 100;
   final formattedAmount = NumberFormat('#,##0.00', locale).format(amount);
   // Keep the ISO code visible by default; callers may provide a localized
-  // display label that also includes the code.
+  // display label.
   final currencyLabel = currencyDisplayName ?? currencyCode.toUpperCase();
   return '${localizeDigits(formattedAmount, locale: locale)} $currencyLabel';
 }

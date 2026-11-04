@@ -40,11 +40,14 @@ void main() {
     'Arabic localizes currency names while keeping ISO codes recognizable',
     () {
       const localization = AppLocalizations(Locale('ar'));
-      expect(localization.translateCurrencyCode('EGP'), 'الجنيه المصري (EGP)');
-      expect(
-        localization.translateCurrencyCode('USD'),
-        'الدولار الأمريكي (USD)',
-      );
+      expect(localization.translateCurrencyCode('EGP'), 'جنيه مصري (EGP)');
+      expect(localization.translateCurrencyCode('USD'), 'دولار أمريكي (USD)');
+      expect(localization.translateCurrencyName('EGP'), 'جنيه مصري');
+      expect(localization.translateCurrencyName('USD'), 'دولار أمريكي');
+      expect(localization.translateCurrencyName('EUR'), 'يورو');
+      expect(localization.translateCurrencyName('GBP'), 'جنيه إسترليني');
+      expect(localization.translateCurrencyName('SAR'), 'ريال سعودي');
+      expect(localization.translateCurrencyName('AED'), 'درهم إماراتي');
     },
   );
 

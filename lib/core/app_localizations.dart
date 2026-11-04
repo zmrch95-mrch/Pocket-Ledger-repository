@@ -70,6 +70,19 @@ class AppLocalizations {
     return translate(source);
   }
 
+  String translateCurrencyName(String currencyCode) {
+    final source = switch (currencyCode.trim().toUpperCase()) {
+      'EGP' => 'Egyptian pound',
+      'USD' => 'US dollar',
+      'EUR' => 'Euro',
+      'GBP' => 'British pound',
+      'SAR' => 'Saudi riyal',
+      'AED' => 'UAE dirham',
+      _ => currencyCode,
+    };
+    return translate(source);
+  }
+
   String translateFormatted(String source, Map<String, Object?> values) {
     var output = translate(source);
     for (final entry in values.entries) {
@@ -87,7 +100,6 @@ class AppLocalizations {
     'Transactions': 'المعاملات',
     'Reports': 'التقارير',
     'Settings': 'الإعدادات',
-    'WORKSPACE': 'مساحة العمل',
     'Your data stays on this device.': 'بياناتك محفوظة على هذا الجهاز.',
     'Your spending at a glance': 'ملخص إنفاقك',
     'Add expense': 'إضافة مصروف',
@@ -280,12 +292,18 @@ class AppLocalizations {
     'The amount must be greater than zero.': 'يجب أن يكون المبلغ أكبر من صفر.',
     'Use DD-MM-YYYY, for example 15-10-2026.':
         'استخدم التنسيق يوم-شهر-سنة، مثل ١٥-١٠-٢٠٢٦.',
-    'Egyptian pound (EGP)': 'الجنيه المصري (EGP)',
-    'US dollar (USD)': 'الدولار الأمريكي (USD)',
-    'Euro (EUR)': 'اليورو (EUR)',
-    'British pound (GBP)': 'الجنيه الإسترليني (GBP)',
-    'Saudi riyal (SAR)': 'الريال السعودي (SAR)',
-    'UAE dirham (AED)': 'الدرهم الإماراتي (AED)',
+    'Egyptian pound': 'جنيه مصري',
+    'US dollar': 'دولار أمريكي',
+    'Euro': 'يورو',
+    'British pound': 'جنيه إسترليني',
+    'Saudi riyal': 'ريال سعودي',
+    'UAE dirham': 'درهم إماراتي',
+    'Egyptian pound (EGP)': 'جنيه مصري (EGP)',
+    'US dollar (USD)': 'دولار أمريكي (USD)',
+    'Euro (EUR)': 'يورو (EUR)',
+    'British pound (GBP)': 'جنيه إسترليني (GBP)',
+    'Saudi riyal (SAR)': 'ريال سعودي (SAR)',
+    'UAE dirham (AED)': 'درهم إماراتي (AED)',
     'Done': 'تم',
     'You can import the expenses.csv file created by your earlier Python app. The importer accepts both DD-MM-YYYY and YYYY-MM-DD dates. Export a CSV backup regularly and keep it somewhere safe. Exports include the currency stored with each expense.':
         'يمكنك استيراد ملف expenses.csv الذي أنشأه تطبيق Python السابق. يقبل المستورد تنسيقي التاريخ DD-MM-YYYY وYYYY-MM-DD. صدّر نسخة CSV احتياطية بانتظام واحتفظ بها في مكان آمن. تتضمن الملفات المصدّرة العملة المحفوظة مع كل مصروف.',
@@ -329,6 +347,9 @@ extension AppLocalizationContext on BuildContext {
 
   String trCurrencyCode(String currencyCode) =>
       AppLocalizations.of(this).translateCurrencyCode(currencyCode);
+
+  String trCurrencyName(String currencyCode) =>
+      AppLocalizations.of(this).translateCurrencyName(currencyCode);
 
   String trf(String source, Map<String, Object?> values) =>
       AppLocalizations.of(this).translateFormatted(source, values);

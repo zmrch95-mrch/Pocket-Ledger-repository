@@ -300,7 +300,7 @@ class _CurrencyValues extends StatelessWidget {
                   value.currencyCode,
                   locale: context.localeCode,
                   currencyDisplayName: context.localeCode == 'ar'
-                      ? context.trCurrencyCode(value.currencyCode)
+                      ? context.trCurrencyName(value.currencyCode)
                       : null,
                 ),
                 style: const TextStyle(
@@ -488,7 +488,7 @@ class _RecentExpenseTile extends StatelessWidget {
                 expense.currencyCode,
                 locale: context.localeCode,
                 currencyDisplayName: context.localeCode == 'ar'
-                    ? context.trCurrencyCode(expense.currencyCode)
+                    ? context.trCurrencyName(expense.currencyCode)
                     : null,
               ),
               style: const TextStyle(

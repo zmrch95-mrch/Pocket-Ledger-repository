@@ -627,7 +627,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                                             locale: context.localeCode,
                                             currencyDisplayName:
                                                 context.localeCode == 'ar'
-                                                ? context.trCurrencyCode(
+                                                ? context.trCurrencyName(
                                                     expense.currencyCode,
                                                   )
                                                 : null,
