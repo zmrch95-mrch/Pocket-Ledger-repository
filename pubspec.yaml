@@ -1,7 +1,7 @@
 name: pocket_ledger
 description: A local-first desktop expense tracker built with Flutter.
 publish_to: 'none'
-version: 1.3.5+10
+version: 1.2.1+4
 
 environment:
   sdk: '>=3.10.0 <4.0.0'

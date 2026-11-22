@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/app_localizations.dart';
-
 import 'data/expense_repository.dart';
 import 'features/shell/app_shell.dart';
 
